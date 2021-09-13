@@ -1,0 +1,170 @@
+$navcolor: slategrey;
+$bkg1: lightgrey;
+$bkg2: grey;
+
+@mixin character($height) {
+  height: $height;
+  padding: 3px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+@mixin center-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+@mixin center-column {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin graph($height) {
+  width: 20rem;
+  height: $height;
+  background-color: $bkg2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  color: black;
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  width: 100vw;
+  position: sticky;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  background-color: $navcolor;
+  border-bottom: 1px white solid;
+  &__link {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    &:hover {
+      background-color: white;
+      color: $navcolor;
+    }
+  }
+}
+
+.header {
+  width: 100vw;
+  height: 250px;
+  //mixin center-column here!
+  @include center-column();
+  background-color: $bkg1;
+  &__main-heading {
+    font-weight: lighter;
+  }
+  &__sub-heading {
+    font-weight: lighter;
+    color: slategrey;
+  }
+}
+
+.section {
+  width: 100vw;
+  height: 350px;
+  @include center-column();
+  background-color: $bkg1;
+  border-bottom: white 0.5px solid;
+  &__heading {
+    padding: 20px;
+  }
+}
+
+.plot {
+  &__content {
+    width: 50rem;
+    //mixin center-row here!
+    @include center-row();
+  }
+  &__img {
+    width: 20%;
+  }
+  &__text {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  &__sub-heading {
+    padding: 10px;
+  }
+  &__blurb {
+    padding: 10px;
+  }
+}
+
+.characters-section {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  width: 100vw;
+  height: 350px;
+}
+
+.character__photos {
+  @include center-row();
+  //  justify-content: space-aroun;
+  align-items: center;
+  width: 50rem;
+}
+
+.character__photo {
+  &-luke {
+    @include character(2rem);
+  }
+  &-leia {
+    @include character(4rem);
+  }
+  &-finn {
+    @include character(6rem);
+  }
+  &-rey {
+    @include character(8rem);
+  }
+  &-kylo {
+    @include character(6rem);
+  }
+  &-poe {
+    @include character(4rem);
+  }
+  &-bb8 {
+    @include character(2rem);
+  }
+}
+
+.ratings-graphs {
+  width: 50rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.ratings-graph {
+  &-imbd {
+    @include graph(75%);
+  }
+}
