@@ -24,7 +24,7 @@ $bkg2: grey;
 }
 
 @mixin graph($height) {
-  width: 20rem;
+  width: 100%;
   height: $height;
   background-color: $bkg2;
 }
@@ -103,7 +103,7 @@ a {
     @include center-row();
   }
   &__img {
-    width: 20%;
+    width: 17%;
   }
   &__text {
     display: flex;
@@ -156,15 +156,38 @@ a {
   }
 }
 
-.ratings-graphs {
-  width: 50rem;
+.ratings-section {
   display: flex;
+  flex-flow: column nowrap;
   justify-content: space-between;
-  align-items: baseline;
+  width: 100vw;
+  height: 500px;
 }
 
-.ratings-graph {
-  &-imbd {
+.ratings-graphs {
+  width: 50rem;
+  height: 500px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  &__graph {
+    width: 25%;
+    height: 95%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__rating {
+    font-size: 1.4rem;
+  }
+  &__bar--imbd {
     @include graph(75%);
+  }
+  &__bar--rotten {
+    @include graph(90%);
+  }
+  &__bar--meta {
+    @include graph(85%);
   }
 }
