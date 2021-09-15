@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Document</title>
+    <title>The Last Jedi</title>
   </head>
   <body>
     <nav class="navbar">
       <a href="#" class="navbar__link">Home</a>
-      <a href="#" class="navbar__link">Plot</a>
-      <a href="#" class="navbar__link">Characters</a>
-      <a href="#" class="navbar__link">Ratings</a>
-      <a href="#" class="navbar__link">Cast</a>
-      <a href="#" class="navbar__link">Gallery</a>
+      <a href="#plot" class="navbar__link">Plot</a>
+      <a href="#characters" class="navbar__link">Characters</a>
+      <a href="#ratings" class="navbar__link">Ratings</a>
+      <a href="#cast" class="navbar__link">Cast</a>
+      <a href="#gallery" class="navbar__link">Gallery</a>
     </nav>
 
     <header class="header">
@@ -24,7 +29,7 @@
 
     <!-- Plot -->
 
-    <section class="section plot">
+    <section class="section plot" id="plot">
       <h2 class="section__heading plot__main-heading">Plot</h2>
       <div class="plot__content">
         <img src="/img/poster.jpg" alt="Film poster" class="plot__img" />
@@ -46,7 +51,7 @@
 
     <!-- Characters -->
 
-    <section class="section characters-section">
+    <section class="section characters-section" id="characters">
       <h2 class="section__heading characters__main-heading">Characters</h2>
       <div class="character__photos">
         <img src="/img/luke.jpg" alt="Luke" class="character__photo-luke" />
@@ -61,7 +66,7 @@
 
     <!-- Ratings -->
 
-    <section class="section ratings-section">
+    <section class="section ratings-section" id="ratings">
       <h2 class="section__heading ratings__main-heading">Ratings</h2>
       <div class="ratings-graphs">
         <div class="ratings-graphs__graph">
@@ -84,14 +89,72 @@
 
     <!-- cast -->
 
-    <section class="section">
+    <section class="section cast-section">
       <h2 class="section__heading cast__main-heading">Cast</h2>
+      <div class="cast__main">
+        <img src="/img/hamill.jpg" alt="Mark Hamill" class="cast__main-photo" />
+        <div class="cast__content">
+          <h3 class="cast__content-title">Mark Hamill</h3>
+          <p class="cast__blurb">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eius
+            fugiat quas quos. Ad placeat voluptate quidem voluptatibus explicabo
+            rerum sit aliquam, molestiae deleniti consequatur, porro, similique
+            officia delectus dolores ab sequi vitae harum quaerat iste
+            asperiores repudiandae praesentium deserunt.
+          </p>
+        </div>
+      </div>
+      <div class="cast__photos" id="cast">
+        <div class="cast__photo">
+          <img src="/img/fisher.jpg" alt="Carrie Fisher" />
+          <p class="cast__photo-label">Carrie Fisher</p>
+        </div>
+
+        <div class="cast__photo">
+          <img src="/img/driver.jpg" alt="Adam Driver" />
+
+          <p class="cast__photo-label">Adam Driver</p>
+        </div>
+        <div class="cast__photo">
+          <img src="/img/ridley.jpg" alt="Carrie Fisher" />
+
+          <p class="cast__photo-label">Daisey Ridley</p>
+        </div>
+        <div class="cast__photo">
+          <img src="/img/boyega.jpg" alt="Carrie Fisher" />
+
+          <p class="cast__photo-label">John Boyega</p>
+        </div>
+        <div class="cast__photo">
+          <img src="/img/isaac.jpg" alt="Carrie Fisher" />
+
+          <p class="cast__photo-label">Oscaar Isaac</p>
+        </div>
+        <div class="cast__photo">
+          <img src="/img/serkis.jpg" alt="Carrie Fisher" />
+
+          <p class="cast__photo-label">Andy Serkis</p>
+        </div>
+      </div>
     </section>
 
     <!-- Gallery -->
 
-    <section class="section">
+    <section class="section gallery" id="gallery">
       <h2 class="section__heading gallery__main-heading">Gallery</h2>
+      <div class="gallery__pictures">
+        <img src="img/gallery.jpg" alt="space battle" class="gallery__img" />
+        <img
+          src="/img/chevron-circle-left-svgrepo-com.svg"
+          alt=""
+          class="gallery__left"
+        />
+        <img
+          src="/img/chevron-circle-right-svgrepo-com.svg"
+          alt=""
+          class="gallery__right"
+        />
+      </div>
     </section>
   </body>
 </html>

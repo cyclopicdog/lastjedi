@@ -18,7 +18,7 @@ $bkg2: grey;
 
 @mixin center-column {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
@@ -41,9 +41,11 @@ html {
 }
 
 body {
-  width: 100vw;
   display: flex;
   flex-flow: column nowrap;
+  overflow-x: hidden;
+  align-items: center;
+  position: relative;
 }
 
 a {
@@ -54,6 +56,7 @@ a {
 .navbar {
   width: 100vw;
   position: sticky;
+  top: 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -73,15 +76,18 @@ a {
 .header {
   width: 100vw;
   height: 250px;
+  background-image: url("/img/welcome.jpg");
+  background-size: auto 744px;
+  background-position: center;
   //mixin center-column here!
   @include center-column();
   background-color: $bkg1;
+  color: white;
   &__main-heading {
     font-weight: lighter;
   }
   &__sub-heading {
     font-weight: lighter;
-    color: slategrey;
   }
 }
 
@@ -90,7 +96,6 @@ a {
   height: 350px;
   @include center-column();
   background-color: $bkg1;
-  border-bottom: white 0.5px solid;
   &__heading {
     padding: 20px;
   }
@@ -118,41 +123,44 @@ a {
 }
 
 .characters-section {
+  width: 100vw;
+  height: 500px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  width: 100vw;
-  height: 350px;
+  background-image: url("/img/rey-standing.jpg");
+  background-size: auto 999px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .character__photos {
   @include center-row();
-  //  justify-content: space-aroun;
   align-items: center;
   width: 50rem;
 }
 
 .character__photo {
   &-luke {
-    @include character(2rem);
+    @include character(5rem);
   }
   &-leia {
-    @include character(4rem);
+    @include character(6rem);
   }
   &-finn {
-    @include character(6rem);
+    @include character(7rem);
   }
   &-rey {
     @include character(8rem);
   }
   &-kylo {
-    @include character(6rem);
+    @include character(7rem);
   }
   &-poe {
-    @include character(4rem);
+    @include character(6rem);
   }
   &-bb8 {
-    @include character(2rem);
+    @include character(5rem);
   }
 }
 
@@ -189,5 +197,84 @@ a {
   }
   &__bar--meta {
     @include graph(85%);
+  }
+}
+
+.cast-section {
+  height: 600px;
+  justify-content: space-between;
+}
+
+.cast {
+  &__main {
+    width: 50rem;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  &__main-photo {
+    width: 20%;
+  }
+  &__content {
+    padding: 1rem;
+  }
+  &__content-title {
+    padding-bottom: 1rem;
+  }
+  &__photos {
+    width: 70%;
+    height: 12rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  &__photo {
+    position: relative;
+    width: 15%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+  }
+  &__photo-label {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    color: white;
+  }
+}
+
+.gallery {
+  width: 100vw;
+  height: 600px;
+  &__pictures {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  &__img {
+    width: 100%;
+    height: fit-content;
+    object-fit: contain;
+    z-index: 1;
+  }
+  &__left {
+    width: 5%;
+    position: absolute;
+    top: 45%;
+    left: 2%;
+    z-index: 2;
+    border-radius: 50%;
+    background-color: white;
+  }
+  &__right {
+    width: 5%;
+    position: absolute;
+    top: 45%;
+    right: 2%;
+    z-index: 2;
+    border-radius: 50%;
+    background-color: white;
   }
 }
